@@ -48,7 +48,18 @@
                     <a class="nav-link" href="#">Sobre</a>
                     <a class="nav-link" href="#">Contato</a>
                 </nav>
-                <button class="md:hidden"><span class="material-icon text-white">menu</span></button>
+                <button id="menu-btn" class="md:hidden flex flex-col justify-between w-8 h-6 focus:outline-none">
+                    <span class="block h-1 w-full bg-white transition-all duration-300"></span>
+                    <span class="block h-1 w-full bg-white transition-all duration-300"></span>
+                    <span class="block h-1 w-full bg-white transition-all duration-300"></span>
+</button>
+                <ul id="menu-mobile" class="hidden flex-col gap-4 bg-black text-white p-6 md:hidden absolute top-full right-0 w-48 shadow-lg transition-all duration-300">
+                    <li><a class="nav-link block" href="#">Início</a></li>
+                    <li><a class="nav-link block" href="#">Categorias</a></li>
+                    <li><a class="nav-link block" href="#">Catálogo</a></li>
+                    <li><a class="nav-link block" href="#">Contato</a></li>
+                    <li><a class="nav-link block" href="#">Sobre</a></li>
+</ul>
     </div>
     </header>
     <main class="flex-grow">

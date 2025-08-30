@@ -1,14 +1,25 @@
-// Seleciona elementos
 const menuBtn = document.getElementById("menu-btn") as HTMLButtonElement;
 const menuMobile = document.getElementById("menu-mobile") as HTMLUListElement;
+const spans = menuBtn.querySelectorAll("span");
 
-// Função para alternar menu
+// Alterna menu e animação do ícone
 menuBtn.addEventListener("click", () => {
-    menuMobile.classList.toggle("hidden"); // abre/fecha menu
+    menuMobile.classList.toggle("hidden"); // mostra/esconde links
+
+    // Anima o hambúrguer para X
+    spans[0].classList.toggle("rotate-45");
+    spans[0].classList.toggle("translate-y-2");
+    spans[1].classList.toggle("opacity-0");
+    spans[2].classList.toggle("-rotate-45");
+    spans[2].classList.toggle("-translate-y-2");
 });
 
-// Fechar menu ao clicar em algum link
-const links = menuMobile.querySelectorAll("a");
-links.forEach(link => {
-    link.addEventListener("click", () => menuMobile.classList.add("hidden"));
+// Fecha menu ao clicar em link
+menuMobile.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        menuMobile.classList.add("hidden"); // esconde links
+        spans[0].classList.remove("rotate-45", "translate-y-2");
+        spans[1].classList.remove("opacity-0");
+        spans[2].classList.remove("-rotate-45", "-translate-y-2");
+    });
 });
